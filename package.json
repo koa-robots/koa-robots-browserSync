@@ -1,7 +1,7 @@
 {
-  "name": "koa-robots-browserSync",
+  "name": "koa-robots-browsersync",
   "version": "0.0.1",
-  "description": "koa-robots-browserSync",
+  "description": "koa-robots-browsersync",
   "author": "寒飞紫",
   "license": "MIT",
   "engines": {
