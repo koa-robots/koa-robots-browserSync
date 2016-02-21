@@ -1,6 +1,6 @@
 {
   "name": "koa-robots-browsersync",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "koa-robots-browsersync",
   "author": "寒飞紫",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "chokidar": "^1.4.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.5.1",
     "babel-core": "^6.4.0",
     "babel-plugin-transform-es2015-destructuring": "^6.4.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.3.16",
@@ -20,6 +21,7 @@
     "babel-plugin-transform-es2015-spread": "^6.4.0",
     "co-fs": "^1.2.0",
     "koa": "^1.1.2",
+    "mocha": "^2.4.5",
     "should": "^8.1.1",
     "supertest": "1.1.0"
   },
@@ -32,9 +34,9 @@
     ]
   },
   "scripts": {
-    "compile": "babel src -d dist",
+    "compile": "node_modules/.bin/babel src -d dist",
     "prepublish": "npm run compile",
-    "test": "npm run compile && mocha --reporter spec --require should --compilers js:babel-core/register"
+    "test": "npm run compile && node_modules/.bin/mocha --reporter spec --require should --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
