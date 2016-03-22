@@ -1,7 +1,7 @@
 {
-  "name": "koa-robots-browsersync",
-  "version": "0.0.4",
-  "description": "koa-robots-browsersync",
+  "name": "koa-robots-plugin-browsersync",
+  "version": "0.0.1",
+  "description": "koa-robots-plugin-browsersync",
   "author": "寒飞紫",
   "license": "MIT",
   "engines": {
@@ -40,6 +40,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/koa-robots/koa-robots-browserSync.git"
+    "url": "https://github.com/koa-robots/koa-robots-plugin-browserSync.git"
   }
 }

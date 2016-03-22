@@ -8,7 +8,7 @@ describe('browserSync', () => {
     it('text/html', (done) => {
         var app = koa()
 
-        app.use(browserSync(['./views']))
+        app.use(browserSync())
         app.use(function *(next){
             this.type = 'html'
             this.body = yield fs.createReadStream(join(process.cwd(), './test/views/index.html'))
@@ -25,7 +25,7 @@ describe('browserSync', () => {
     it('text/plain', (done) => {
         var app = koa()
 
-        app.use(browserSync(['./views']))
+        app.use(browserSync())
         app.use(function *(next){
             this.type = 'text'
             this.body = yield fs.createReadStream(join(process.cwd(), './test/views/index.html'))

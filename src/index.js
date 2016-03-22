@@ -2,9 +2,10 @@ import chokidar from 'chokidar'
 import browserSync from 'browser-sync'
 import {normalize, resolve} from 'path'
 
-export default function(roots = []){
-    let sync, scripts
+export default function(){
+    let sync, scripts, roots
 
+    roots = ['./views']
     sync = browserSync.create()
 
     sync.init({

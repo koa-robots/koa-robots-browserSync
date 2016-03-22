@@ -5,10 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-    let roots = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+    let sync, scripts, roots;
 
-    let sync, scripts;
-
+    roots = ['./views'];
     sync = _browserSync2.default.create();
 
     sync.init({
