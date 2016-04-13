@@ -5,10 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-    let sync, scripts, roots;
+    let sync, scripts, roots, version;
 
     roots = ['./views'];
     sync = _browserSync2.default.create();
+    version = require('browser-sync/package').version;
 
     sync.init({
         ui: false,
@@ -19,7 +20,7 @@ exports.default = function () {
         return (0, _path.normalize)((0, _path.resolve)(root));
     });
 
-    scripts = ['<script type="text/javascript" id="__bs_script__">', 'document.write("<script async src=\'http://HOST:3000/browser-sync/browser-sync-client.2.11.1.js\'><\\/script>".replace("HOST", location.hostname));', '</script>', '</body>'].join('');
+    scripts = ['<script type="text/javascript" id="__bs_script__">', 'document.write("<script async src=\'http://HOST:3000/browser-sync/browser-sync-client.' + version + '.js\'><\\/script>".replace("HOST", location.hostname));', '</script>', '</body>'].join('');
 
     _chokidar2.default.watch(roots, {
         ignored: /[\/\\]\./

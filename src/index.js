@@ -3,10 +3,11 @@ import browserSync from 'browser-sync'
 import {normalize, resolve} from 'path'
 
 export default function(){
-    let sync, scripts, roots
+    let sync, scripts, roots, version
 
     roots = ['./views']
     sync = browserSync.create()
+    version = require('browser-sync/package').version
 
     sync.init({
         ui: false,
@@ -19,11 +20,11 @@ export default function(){
 
     scripts = [
         '<script type="text/javascript" id="__bs_script__">',
-        'document.write("<script async src=\'http://HOST:3000/browser-sync/browser-sync-client.2.11.1.js\'><\\/script>".replace("HOST", location.hostname));',
+        'document.write("<script async src=\'http://HOST:3000/browser-sync/browser-sync-client.' + version + '.js\'><\\/script>".replace("HOST", location.hostname));',
         '</script>',
         '</body>'
     ].join('')
-
+    
     chokidar.watch(roots, {
         ignored: /[\/\\]\./
     }).on('all', (event, path) => {
